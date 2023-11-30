@@ -63,7 +63,6 @@ print(f'Interest Rates: {IR_dict}'+ "\n")
 
 
 """
-https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html#sphx-glr-auto-examples-linear-model-plot-ols-py
 From 1975 - 2022
 -Take the average house price for every year, multiply it by the (1 + interest rate)
 -Take the House Price Index, and since it is a percentage, divide it by 100 
@@ -96,8 +95,6 @@ x  =  list(int(x) for x in ADJUSTED_dict.keys()) #years
 print(f"Ajusted x: {x}" + "\n")
 print(f"Ajusted y: {y}" + "\n")
 print("****************************************END****************************************************")
-
-#CITE: https://www.statology.org/line-of-best-fit-python/
 
 #----------------------------------total line of best fit----------------------------------------------
 #define data
