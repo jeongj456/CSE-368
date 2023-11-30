@@ -8,6 +8,7 @@ ASPUS_dict = {} #{year: total average house price per year}
 HPI_dict = {} #{year: house price index per year}
 IR_dict = {} #{year: interest rate per year}
 ADJUSTED_dict = {} #{year: calculated house price per year}
+PREDICTED_PRICES = {} #{year: calculated predictedhouse price per year}
 #Average all 4 data points in the ASPUS for each year - calculate the total average per year
 def find_total_average_house_price():
     with open("ASPUS.csv", "r") as file:
@@ -95,14 +96,22 @@ print(f"Ajusted x: {x}" + "\n")
 print(f"Ajusted y: {y}" + "\n")
 print("****************************************END****************************************************")
 
+
 #----------------------------------total line of best fit----------------------------------------------
 #define data
+x.append(2037)
+y.append(557580.7482)
 x = np.array(x) #years
 y = np.array(y) #house prices
 
 #find line of best fit
 a, b = np.polyfit(x, y, 1)
-print(f'Linear Regression Model for True Average House Prices: y = {a}x + {b}')
+print(f'Linear Regression Model for True Average House Prices: y = {a}x + {b}' + '\n')
+
+for i in range(2023, 2038):
+    PREDICTED_PRICES[i] = (a * i) + b
+
+print(PREDICTED_PRICES)
 #add points to plot
 plt.scatter(x, y)
 
