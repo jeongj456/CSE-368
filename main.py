@@ -31,9 +31,7 @@ def find_total_average_house_price():
 
 #Test if we calculate average house price correctly
 find_total_average_house_price()
-print("start")
 print(f'ASPUS: {ASPUS_dict}' + "\n")
-#print("\n")
 #1963 -> 19375
 #1964 -> 20300
 #2023 -> 507233.33
@@ -48,7 +46,6 @@ def house_index():
 
 house_index()
 print(f'House Price Index: {HPI_dict}' + "\n")
-#print("\n")
 
 #Store interest rate per year in our IR_dict
 def interest_rates():
@@ -94,7 +91,7 @@ y  =  list(x for x in ADJUSTED_dict.values()) #house prices
 x  =  list(int(x) for x in ADJUSTED_dict.keys()) #years
 print(f"Ajusted x: {x}" + "\n")
 print(f"Ajusted y: {y}" + "\n")
-print("****************************************END****************************************************")
+
 
 
 #----------------------------------total line of best fit----------------------------------------------
@@ -111,7 +108,8 @@ print(f'Linear Regression Model for True Average House Prices: y = {a}x + {b}' +
 for i in range(2023, 2038):
     PREDICTED_PRICES[i] = (a * i) + b
 
-print(PREDICTED_PRICES)
+print(f'Predicted Prices: {PREDICTED_PRICES}')
+print("****************************************END****************************************************")
 #add points to plot
 plt.scatter(x, y)
 
