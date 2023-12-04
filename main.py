@@ -10,6 +10,8 @@ IR_dict = {} #{year: interest rate per year}
 ADJUSTED_dict = {} #{year: calculated house price per year}
 PREDICTED_PRICES = {} #{year: calculated predictedhouse price per year}
 #Average all 4 data points in the ASPUS for each year - calculate the total average per year
+
+
 def find_total_average_house_price():
     with open("ASPUS.csv", "r") as file:
         reader = csv.reader(file)
